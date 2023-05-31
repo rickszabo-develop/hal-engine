@@ -1,5 +1,5 @@
 *.vs/
-/HAL/bin/
-/HAL/bin-int/
+bin/
+bin-int/
 
 *.user
