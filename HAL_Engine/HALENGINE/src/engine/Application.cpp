@@ -1,3 +1,4 @@
+#include "halpch.h"
 #include "Application.h"
 
 namespace Haleng 

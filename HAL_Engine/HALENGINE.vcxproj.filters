@@ -4,9 +4,11 @@
     <Filter Include="engine">
       <UniqueIdentifier>{FBDB78FB-E77D-A3D1-D038-B725BC792A22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="engine\events">
+      <UniqueIdentifier>{9FF33A70-0BB4-B6A6-D4EE-FF23406EFB82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HALENGINE\src\HALENG.H" />
     <ClInclude Include="HALENGINE\src\engine\Application.h">
       <Filter>engine</Filter>
     </ClInclude>
@@ -19,6 +21,20 @@
     <ClInclude Include="HALENGINE\src\engine\Log.h">
       <Filter>engine</Filter>
     </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\events\ApplicationEvent.h">
+      <Filter>engine\events</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\events\Event.h">
+      <Filter>engine\events</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\events\KeyEvent.h">
+      <Filter>engine\events</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\events\MouseEvent.h">
+      <Filter>engine\events</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\haleng.h" />
+    <ClInclude Include="HALENGINE\src\halpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="HALENGINE\src\engine\Log.cpp">
       <Filter>engine</Filter>
     </ClCompile>
+    <ClCompile Include="HALENGINE\src\halpch.cpp" />
   </ItemGroup>
 </Project>

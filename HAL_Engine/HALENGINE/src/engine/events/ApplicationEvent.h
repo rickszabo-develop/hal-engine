@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Haleng {
 
 	class HALENG_API WindowResizeEvent : public Event 

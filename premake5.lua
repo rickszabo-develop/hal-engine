@@ -18,6 +18,9 @@ project "HALENGINE"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "halpch.h"
+	pchsource "HAL_Engine/HALENGINE/src/halpch.cpp"
+
 	files
 	{
 		"HAL_Engine/HALENGINE/src/**.h",
@@ -26,6 +29,7 @@ project "HALENGINE"
 
 	includedirs
 	{
+		"HAL_Engine/HALENGINE/src",
 		"HAL_Engine/vendor/spdlog/include"
 	}
 
