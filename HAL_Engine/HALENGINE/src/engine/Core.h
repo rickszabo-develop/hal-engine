@@ -9,3 +9,5 @@
 #else
 	#error Only supported on Windows
 #endif // HALENG_PLATFORM_WINDOWS
+
+#define BIT(x) (1 << x)

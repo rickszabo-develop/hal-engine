@@ -146,6 +146,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="HALENGINE\src\engine\Events\ApplicationEvent.h" />
+    <ClInclude Include="HALENGINE\src\engine\Events\Event.h" />
+    <ClInclude Include="HALENGINE\src\engine\Events\KeyEvent.h" />
+    <ClInclude Include="HALENGINE\src\engine\Events\MouseEvent.h" />
     <ClInclude Include="HALENGINE\src\HALENG.H" />
     <ClInclude Include="HALENGINE\src\engine\Application.h" />
     <ClInclude Include="HALENGINE\src\engine\Core.h" />
