@@ -10,6 +10,12 @@ workspace "Haleng"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "HAL_Engine/vendor/GLFW/include"
+
+include "HAL_Engine/vendor/GLFW"
+
 project "HALENGINE"
 	location "HAL_Engine"
 	kind "SharedLib"
@@ -30,7 +36,14 @@ project "HALENGINE"
 	includedirs
 	{
 		"HAL_Engine/HALENGINE/src",
-		"HAL_Engine/vendor/spdlog/include"
+		"HAL_Engine/vendor/spdlog/include",
+		"%[IncludeDir.GLFW]"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

@@ -1,3 +1,6 @@
 [submodule "HAL_Engine/vendor/spdlog"]
 	path = HAL_Engine/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "HAL_Engine/vendor/GLFW"]
+	path = HAL_Engine/vendor/GLFW
+	url = https://github.com/TheCherno/glfw.git

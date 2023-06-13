@@ -35,6 +35,9 @@
     </ClInclude>
     <ClInclude Include="HALENGINE\src\haleng.h" />
     <ClInclude Include="HALENGINE\src\halpch.h" />
+    <ClInclude Include="Window.h">
+      <Filter>engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
