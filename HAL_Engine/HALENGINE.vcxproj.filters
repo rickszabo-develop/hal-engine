@@ -7,6 +7,12 @@
     <Filter Include="engine\events">
       <UniqueIdentifier>{9FF33A70-0BB4-B6A6-D4EE-FF23406EFB82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{4A63C33C-3630-1E48-5F49-0CF04B7553D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\windows">
+      <UniqueIdentifier>{A44FC440-9048-E392-B97A-C817A5D2C29E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HALENGINE\src\engine\Application.h">
@@ -19,6 +25,9 @@
       <Filter>engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\Log.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\Window.h">
       <Filter>engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\events\ApplicationEvent.h">
@@ -35,8 +44,8 @@
     </ClInclude>
     <ClInclude Include="HALENGINE\src\haleng.h" />
     <ClInclude Include="HALENGINE\src\halpch.h" />
-    <ClInclude Include="Window.h">
-      <Filter>engine</Filter>
+    <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h">
+      <Filter>platform\windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -47,5 +56,8 @@
       <Filter>engine</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\halpch.cpp" />
+    <ClCompile Include="HALENGINE\src\platform\windows\WindowsWindow.cpp">
+      <Filter>platform\windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

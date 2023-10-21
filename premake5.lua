@@ -37,7 +37,7 @@ project "HALENGINE"
 	{
 		"HAL_Engine/HALENGINE/src",
 		"HAL_Engine/vendor/spdlog/include",
-		"%[IncludeDir.GLFW]"
+		"%{IncludeDir.GLFW}"
 	}
 
 	links
@@ -64,14 +64,17 @@ project "HALENGINE"
 
 	filter "configurations:Debug"
 		defines "HALENG_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HALENG_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HALENG_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "HalaiGame"

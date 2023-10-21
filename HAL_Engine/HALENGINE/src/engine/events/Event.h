@@ -2,6 +2,8 @@
 
 #include "../Core.h"
 
+#include <string>
+#include <functional>
 
 namespace Haleng {
 	// Events in Haleng are currently blocking, menaing when an event occurs 
@@ -42,8 +44,8 @@ namespace Haleng {
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
-
-		inline bool IsInCategoty(EventCategory category) 
+		
+		inline bool IsInCategory(EventCategory category) 
 		{
 			return GetCategoryFlags() & category;
 		}

@@ -1,10 +1,14 @@
 #include "halpch.h"
 #include "Application.h"
 
+#include "engine/events/ApplicationEvent.h"
+#include "engine/Log.h"
+
 namespace Haleng 
 {
 	Application::Application()
 	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -13,6 +17,9 @@ namespace Haleng
 
 	void Application::Run()
 	{
-		while (true);
+		while (m_Running) 
+		{
+			m_Window->OnUpdate();
+		}
 	}
 }

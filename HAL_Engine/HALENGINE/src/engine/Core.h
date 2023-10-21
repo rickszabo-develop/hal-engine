@@ -10,4 +10,12 @@
 	#error Only supported on Windows
 #endif // HALENG_PLATFORM_WINDOWS
 
+#ifdef HALENG_ENABLE_ASSERTS
+	#define HALENG_ASSERT(x, ...) { if(!(x)) { HALENG_CLIENT_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define HALENG_CORE_ERROR(x, ...) { if(!(x)) { HALENG_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define HALENG_ASSERT(x, ...)
+	#define HALENG_CORE_ASSERT(x, ...)
+#endif
+
 #define BIT(x) (1 << x)
