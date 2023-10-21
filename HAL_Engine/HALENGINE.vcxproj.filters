@@ -47,6 +47,8 @@
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\layer\Layer.h" />
+    <ClInclude Include="HALENGINE\src\engine\layer\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
@@ -59,5 +61,7 @@
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsWindow.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
+    <ClCompile Include="HALENGINE\src\engine\layer\Layer.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\layer\LayerStack.cpp" />
   </ItemGroup>
 </Project>
