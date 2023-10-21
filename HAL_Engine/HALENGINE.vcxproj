@@ -158,6 +158,8 @@
     <ClInclude Include="HALENGINE\src\engine\Application.h" />
     <ClInclude Include="HALENGINE\src\engine\Core.h" />
     <ClInclude Include="HALENGINE\src\engine\EntryPoint.h" />
+    <ClInclude Include="HALENGINE\src\engine\layer\Layer.h" />
+    <ClInclude Include="HALENGINE\src\engine\layer\LayerStack.h" />
     <ClInclude Include="HALENGINE\src\engine\Log.h" />
     <ClInclude Include="HALENGINE\src\engine\Window.h" />
     <ClInclude Include="HALENGINE\src\engine\events\ApplicationEvent.h" />
@@ -170,6 +172,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\layer\Layer.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\layer\LayerStack.cpp" />
     <ClCompile Include="HALENGINE\src\engine\Log.cpp" />
     <ClCompile Include="HALENGINE\src\halpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
