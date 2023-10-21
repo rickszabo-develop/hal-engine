@@ -11,6 +11,8 @@ namespace Haleng {
 			virtual ~Application();
 
 			void Run();
+
+			void OnEvent(Event&);
 	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
