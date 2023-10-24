@@ -3,6 +3,7 @@
 #include "engine/Application.h"
 
 #include <engine/Log.h>
+#include <glad/glad.h>
 
 #include "engine/events/ApplicationEvent.h"
 #include "engine/events/MouseEvent.h"
@@ -50,6 +51,10 @@ namespace Haleng {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		HALENG_CORE_ASSERT(status, "Glad Failed to Iniatialize.");
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>halpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>HALENG_PLATFORM_WINDOWS;HALENG_BUILD_DLL;HALENG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HALENG_PLATFORM_WINDOWS;HALENG_BUILD_DLL;GLFW_INCLUDE_NONE;HALENG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -103,8 +103,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>halpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>HALENG_PLATFORM_WINDOWS;HALENG_BUILD_DLL;HALENG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HALENG_PLATFORM_WINDOWS;HALENG_BUILD_DLL;GLFW_INCLUDE_NONE;HALENG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -131,8 +131,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>halpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>HALENG_PLATFORM_WINDOWS;HALENG_BUILD_DLL;HALENG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HALENG_PLATFORM_WINDOWS;HALENG_BUILD_DLL;GLFW_INCLUDE_NONE;HALENG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -158,23 +158,23 @@
     <ClInclude Include="HALENGINE\src\engine\Application.h" />
     <ClInclude Include="HALENGINE\src\engine\Core.h" />
     <ClInclude Include="HALENGINE\src\engine\EntryPoint.h" />
-    <ClInclude Include="HALENGINE\src\engine\layer\Layer.h" />
-    <ClInclude Include="HALENGINE\src\engine\layer\LayerStack.h" />
     <ClInclude Include="HALENGINE\src\engine\Log.h" />
     <ClInclude Include="HALENGINE\src\engine\Window.h" />
     <ClInclude Include="HALENGINE\src\engine\events\ApplicationEvent.h" />
     <ClInclude Include="HALENGINE\src\engine\events\Event.h" />
     <ClInclude Include="HALENGINE\src\engine\events\KeyEvent.h" />
     <ClInclude Include="HALENGINE\src\engine\events\MouseEvent.h" />
+    <ClInclude Include="HALENGINE\src\engine\layer\Layer.h" />
+    <ClInclude Include="HALENGINE\src\engine\layer\LayerStack.h" />
     <ClInclude Include="HALENGINE\src\haleng.h" />
     <ClInclude Include="HALENGINE\src\halpch.h" />
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\Log.cpp" />
     <ClCompile Include="HALENGINE\src\engine\layer\Layer.cpp" />
     <ClCompile Include="HALENGINE\src\engine\layer\LayerStack.cpp" />
-    <ClCompile Include="HALENGINE\src\engine\Log.cpp" />
     <ClCompile Include="HALENGINE\src\halpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -183,6 +183,9 @@
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
