@@ -1,13 +1,12 @@
 #include "halpch.h"
 #include "Application.h"
 
-#include "engine/events/ApplicationEvent.h"
 #include "engine/Log.h"
 
 #include <GLFW/glfw3.h>
 
-namespace Haleng 
-{
+namespace Haleng {
+
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 	Application::Application()
@@ -31,6 +30,9 @@ namespace Haleng
 			if (e.Handled)
 				break;
 		}
+
+		EventDispatcher dispatch(e);
+		dispatch.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 	}
 
 	void Application::PushLayer(Layer* layer) 
@@ -55,5 +57,11 @@ namespace Haleng
 
 			m_Window->OnUpdate();
 		}
+	}
+
+	bool Application::OnWindowClose(WindowCloseEvent& e)
+	{
+		m_Running = false;
+		return true;
 	}
 }
