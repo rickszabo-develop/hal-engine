@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "HAL_Engine/vendor/GLFW/include"
+IncludeDir["glad"] = "HAL_Engine/vendor/glad/include"
 
 include "HAL_Engine/vendor/GLFW"
+include "HAL_Engine/vendor/glad"
 
 project "HALENGINE"
 	location "HAL_Engine"
@@ -37,12 +39,14 @@ project "HALENGINE"
 	{
 		"HAL_Engine/HALENGINE/src",
 		"HAL_Engine/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"glad",
 		"opengl32.lib"
 	}
 
@@ -54,7 +58,8 @@ project "HALENGINE"
 		defines
 		{
 			"HALENG_PLATFORM_WINDOWS",
-			"HALENG_BUILD_DLL"
+			"HALENG_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 		
 		postbuildcommands
