@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "HAL_Engine/vendor/GLFW/include"
 IncludeDir["glad"] = "HAL_Engine/vendor/glad/include"
+IncludeDir["imgui"] = "HAL_Engine/vendor/imgui"
 
 include "HAL_Engine/vendor/GLFW"
 include "HAL_Engine/vendor/glad"
+include "HAL_Engine/vendor/imgui"
 
 project "HALENGINE"
 	location "HAL_Engine"
@@ -40,14 +42,16 @@ project "HALENGINE"
 		"HAL_Engine/HALENGINE/src",
 		"HAL_Engine/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.glad}"
+		"%{IncludeDir.glad}",
+		"%{IncludeDir.imgui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"glad",
-		"opengl32.lib"
+		"opengl32.lib",
+		"imgui"
 	}
 
 	filter "system:windows"

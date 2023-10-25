@@ -12,6 +12,7 @@ class GameApp : public Haleng::Application
 		GameApp() 
 		{
 			PushLayer(new LayerExample());
+			PushOverlay(new Haleng::ImGuiLayer());
 		}
 
 		~GameApp()
