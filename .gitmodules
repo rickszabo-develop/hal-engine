@@ -4,3 +4,6 @@
 [submodule "HAL_Engine/vendor/GLFW"]
 	path = HAL_Engine/vendor/GLFW
 	url = https://github.com/TheCherno/glfw.git
+[submodule "HAL_Engine/vendor/imgui"]
+	path = HAL_Engine/vendor/imgui
+	url = https://github.com/ocornut/imgui.git
