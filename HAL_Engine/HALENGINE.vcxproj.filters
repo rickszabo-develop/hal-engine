@@ -7,11 +7,17 @@
     <Filter Include="engine\events">
       <UniqueIdentifier>{9FF33A70-0BB4-B6A6-D4EE-FF23406EFB82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="engine\imgui">
+      <UniqueIdentifier>{A5B916B6-911C-A65A-3AA2-DE1026E471DD}</UniqueIdentifier>
+    </Filter>
     <Filter Include="engine\layer">
       <UniqueIdentifier>{27B946B6-131C-D65A-BCA1-0E11A8E3A1DD}</UniqueIdentifier>
     </Filter>
     <Filter Include="platform">
       <UniqueIdentifier>{4A63C33C-3630-1E48-5F49-0CF04B7553D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\opengl">
+      <UniqueIdentifier>{9E4DBFD0-0AD9-2C95-13EA-AF897FF48895}</UniqueIdentifier>
     </Filter>
     <Filter Include="platform\windows">
       <UniqueIdentifier>{A44FC440-9048-E392-B97A-C817A5D2C29E}</UniqueIdentifier>
@@ -45,6 +51,9 @@
     <ClInclude Include="HALENGINE\src\engine\events\MouseEvent.h">
       <Filter>engine\events</Filter>
     </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\imgui\ImGuiLayer.h">
+      <Filter>engine\imgui</Filter>
+    </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\layer\Layer.h">
       <Filter>engine\layer</Filter>
     </ClInclude>
@@ -53,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="HALENGINE\src\haleng.h" />
     <ClInclude Include="HALENGINE\src\halpch.h" />
+    <ClInclude Include="HALENGINE\src\platform\opengl\ImGuiOpenGLRenderer.h">
+      <Filter>platform\opengl</Filter>
+    </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
@@ -64,6 +76,9 @@
     <ClCompile Include="HALENGINE\src\engine\Log.cpp">
       <Filter>engine</Filter>
     </ClCompile>
+    <ClCompile Include="HALENGINE\src\engine\imgui\ImGuiLayer.cpp">
+      <Filter>engine\imgui</Filter>
+    </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\layer\Layer.cpp">
       <Filter>engine\layer</Filter>
     </ClCompile>
@@ -71,6 +86,9 @@
       <Filter>engine\layer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\halpch.cpp" />
+    <ClCompile Include="HALENGINE\src\platform\opengl\ImGuiOpenGLRenderer.cpp">
+      <Filter>platform\opengl</Filter>
+    </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsWindow.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
