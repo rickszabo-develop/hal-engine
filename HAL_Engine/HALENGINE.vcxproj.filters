@@ -24,6 +24,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HALENGINE\src\HALENG.H" />
     <ClInclude Include="HALENGINE\src\engine\Application.h">
       <Filter>engine</Filter>
     </ClInclude>
@@ -60,7 +61,6 @@
     <ClInclude Include="HALENGINE\src\engine\layer\LayerStack.h">
       <Filter>engine\layer</Filter>
     </ClInclude>
-    <ClInclude Include="HALENGINE\src\haleng.h" />
     <ClInclude Include="HALENGINE\src\halpch.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\ImGuiOpenGLRenderer.h">
       <Filter>platform\opengl</Filter>

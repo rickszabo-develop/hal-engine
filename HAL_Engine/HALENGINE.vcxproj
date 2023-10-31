@@ -155,6 +155,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="HALENGINE\src\HALENG.H" />
     <ClInclude Include="HALENGINE\src\engine\Application.h" />
     <ClInclude Include="HALENGINE\src\engine\Core.h" />
     <ClInclude Include="HALENGINE\src\engine\EntryPoint.h" />
@@ -167,7 +168,6 @@
     <ClInclude Include="HALENGINE\src\engine\imgui\ImGuiLayer.h" />
     <ClInclude Include="HALENGINE\src\engine\layer\Layer.h" />
     <ClInclude Include="HALENGINE\src\engine\layer\LayerStack.h" />
-    <ClInclude Include="HALENGINE\src\haleng.h" />
     <ClInclude Include="HALENGINE\src\halpch.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h" />
