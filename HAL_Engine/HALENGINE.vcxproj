@@ -170,7 +170,9 @@
     <ClInclude Include="HALENGINE\src\engine\layer\LayerStack.h" />
     <ClInclude Include="HALENGINE\src\halpch.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="HALENGINE\src\platform\windows\WindowsInput.h" />
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h" />
+    <ClInclude Include="HALENGINE\src\engine\Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp" />
@@ -182,6 +184,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\opengl\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="HALENGINE\src\platform\windows\WindowsInput.cpp" />
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>

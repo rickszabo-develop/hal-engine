@@ -2,6 +2,7 @@
 #include "Application.h"
 
 #include "engine/Log.h"
+#include "engine/Input.h"
 
 #include <glad/glad.h>
 

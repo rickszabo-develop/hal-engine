@@ -1,5 +1,6 @@
 #include <Haleng.h>
 
+
 class LayerExample : public Haleng::Layer {
 public:
 	LayerExample() {}
