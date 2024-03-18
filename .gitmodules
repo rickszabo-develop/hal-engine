@@ -7,3 +7,6 @@
 [submodule "HAL_Engine/vendor/imgui"]
 	path = HAL_Engine/vendor/imgui
 	url = https://github.com/ocornut/imgui.git
+[submodule "HAL_Engine/vendor/glm"]
+	path = HAL_Engine/vendor/glm
+	url = https://github.com/g-truc/glm.git

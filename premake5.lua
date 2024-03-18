@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "HAL_Engine/vendor/GLFW/include"
 IncludeDir["glad"] = "HAL_Engine/vendor/glad/include"
 IncludeDir["imgui"] = "HAL_Engine/vendor/imgui"
+IncludeDir["glm"] = "HAL_Engine/vendor/glm"
 
 include "HAL_Engine/vendor/GLFW"
 include "HAL_Engine/vendor/glad"
@@ -43,7 +44,8 @@ project "HALENGINE"
 		"HAL_Engine/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.glad}",
-		"%{IncludeDir.imgui}"
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -103,7 +105,8 @@ project "HalaiGame"
 	includedirs
 	{
 		"HAL_Engine/vendor/spdlog/include",
-		"HAL_Engine/HALENGINE/src"
+		"HAL_Engine/HALENGINE/src",
+		"%{IncludeDir.glm}"
 	}
 
 	filter "system:windows"

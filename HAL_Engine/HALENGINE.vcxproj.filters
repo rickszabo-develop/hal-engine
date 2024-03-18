@@ -34,7 +34,16 @@
     <ClInclude Include="HALENGINE\src\engine\EntryPoint.h">
       <Filter>engine</Filter>
     </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\Input.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\Keycodes.h">
+      <Filter>engine</Filter>
+    </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\Log.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\MouseButtonCodes.h">
       <Filter>engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\Window.h">
@@ -65,15 +74,12 @@
     <ClInclude Include="HALENGINE\src\platform\opengl\ImGuiOpenGLRenderer.h">
       <Filter>platform\opengl</Filter>
     </ClInclude>
+    <ClInclude Include="HALENGINE\src\platform\windows\WindowsInput.h">
+      <Filter>platform\windows</Filter>
+    </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
-    <ClInclude Include="HALENGINE\src\engine\Input.h">
-      <Filter>engine</Filter>
-    </ClInclude>
-    <ClInclude Include="HALENGINE\src\platform\windows\WindowsInput.h" />
-    <ClInclude Include="HALENGINE\src\engine\Keycodes.h" />
-    <ClInclude Include="HALENGINE\src\engine\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
@@ -95,9 +101,11 @@
     <ClCompile Include="HALENGINE\src\platform\opengl\ImGuiOpenGLRenderer.cpp">
       <Filter>platform\opengl</Filter>
     </ClCompile>
+    <ClCompile Include="HALENGINE\src\platform\windows\WindowsInput.cpp">
+      <Filter>platform\windows</Filter>
+    </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsWindow.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
-    <ClCompile Include="HALENGINE\src\platform\windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

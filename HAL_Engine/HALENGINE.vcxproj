@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>halpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HALENG_PLATFORM_WINDOWS;HALENG_BUILD_DLL;GLFW_INCLUDE_NONE;HALENG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -104,7 +104,7 @@
       <PrecompiledHeaderFile>halpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HALENG_PLATFORM_WINDOWS;HALENG_BUILD_DLL;GLFW_INCLUDE_NONE;HALENG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -132,7 +132,7 @@
       <PrecompiledHeaderFile>halpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HALENG_PLATFORM_WINDOWS;HALENG_BUILD_DLL;GLFW_INCLUDE_NONE;HALENG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>HALENGINE\src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -155,13 +155,14 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="HALENGINE\src\engine\Keycodes.h" />
-    <ClInclude Include="HALENGINE\src\engine\MouseButtonCodes.h" />
     <ClInclude Include="HALENGINE\src\HALENG.H" />
     <ClInclude Include="HALENGINE\src\engine\Application.h" />
     <ClInclude Include="HALENGINE\src\engine\Core.h" />
     <ClInclude Include="HALENGINE\src\engine\EntryPoint.h" />
+    <ClInclude Include="HALENGINE\src\engine\Input.h" />
+    <ClInclude Include="HALENGINE\src\engine\Keycodes.h" />
     <ClInclude Include="HALENGINE\src\engine\Log.h" />
+    <ClInclude Include="HALENGINE\src\engine\MouseButtonCodes.h" />
     <ClInclude Include="HALENGINE\src\engine\Window.h" />
     <ClInclude Include="HALENGINE\src\engine\events\ApplicationEvent.h" />
     <ClInclude Include="HALENGINE\src\engine\events\Event.h" />
@@ -174,7 +175,6 @@
     <ClInclude Include="HALENGINE\src\platform\opengl\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsInput.h" />
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h" />
-    <ClInclude Include="HALENGINE\src\engine\Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp" />
