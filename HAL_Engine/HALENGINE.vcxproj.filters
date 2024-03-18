@@ -72,6 +72,8 @@
       <Filter>engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsInput.h" />
+    <ClInclude Include="HALENGINE\src\engine\Keycodes.h" />
+    <ClInclude Include="HALENGINE\src\engine\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
