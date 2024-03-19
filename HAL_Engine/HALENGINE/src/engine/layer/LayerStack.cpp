@@ -3,10 +3,7 @@
 
 
 namespace Haleng {
-	LayerStack::LayerStack() 
-	{
-		m_LayerInsert = begin();
-	}
+	LayerStack::LayerStack() {}
 
 	LayerStack::~LayerStack() 
 	{
@@ -18,7 +15,8 @@ namespace Haleng {
 
 	void LayerStack::PushLayer(Layer* layer) 
 	{
-		m_LayerInsert = m_Layers.emplace(m_LayerInsert, layer);
+		m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
+		m_LayerInsertIndex++;
 	}
 
 	void LayerStack::PushOverlay(Layer* overlay) 
@@ -32,7 +30,7 @@ namespace Haleng {
 		if (it != end()) 
 		{
 			m_Layers.erase(it);
-			m_LayerInsert--;
+			m_LayerInsertIndex--;
 		}
 	}
 

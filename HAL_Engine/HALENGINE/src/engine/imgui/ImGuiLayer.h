@@ -11,21 +11,12 @@ namespace Haleng {
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnAttach();
-		void OnDetach();
-		void OnUpdate();
-		void OnEvent(Event& e);
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
+		virtual void OnImGuiRender() override;
 
-		bool OnMouseButtonPressed(MouseButtonPressedEvent& e);
-		bool OnMouseButtonReleased(MouseButtonReleasedEvent& e);
-		bool OnMouseScrolled(MouseScrolledEvent& e);
-		bool OnMouseMoved(MouseMovedEvent& e);
-
-		bool OnKeyPressed(KeyPressedEvent& e);
-		bool OnKeyReleased(KeyReleasedEvent& e);
-		bool OnKeyTyped(KeyTypedEvent& e); //todo: implement typed
-
-		bool OnWindowResize(WindowResizeEvent& e);
+		void Begin();
+		void End();
 	private:
 		float m_Time = 0.0f;
 	};

@@ -20,15 +20,21 @@ public:
 		auto foo = camera(5.0f, glm::vec2(0.5f, 0.5f));
 	}
 	~LayerExample() {}
+
+	virtual void OnImGuiRender() override;
 };
+
+void LayerExample::OnImGuiRender() 
+{
+	
+}
 
 class GameApp : public Haleng::Application 
 {
 	public:
-		GameApp() 
+		GameApp() : Haleng::Application()
 		{
 			PushLayer(new LayerExample());
-			PushOverlay(new Haleng::ImGuiLayer());
 		}
 
 		~GameApp()
@@ -36,6 +42,8 @@ class GameApp : public Haleng::Application
 
 		}
 };
+
+
 
 Haleng::Application* Haleng::CreateApplication() 
 {

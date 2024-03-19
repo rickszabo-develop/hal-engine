@@ -6,6 +6,8 @@
 #include "layer/Layer.h"
 #include "layer/LayerStack.h"
 
+#include "imgui/ImGuiLayer.h"
+
 
 
 namespace Haleng {
@@ -28,6 +30,7 @@ namespace Haleng {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 
 		LayerStack m_LayerStack;
