@@ -19,7 +19,7 @@
 	#define HALENG_CORE_ERROR(x, ...) { if(!(x)) { HALENG_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
 	#define HALENG_ASSERT(x, ...)
-	#define HALENG_CORE_ASSERT(x, ...)
+	#define HALENG_CORE_ERROR(x, ...)
 #endif
 
 #define BIT(x) (1 << x)

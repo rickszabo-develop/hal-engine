@@ -1,6 +1,7 @@
 #pragma once
 
-#include <engine/Window.h>
+#include "engine/Window.h"
+#include "engine/renderer/GraphicContext.h"
 
 #include <GLFW/glfw3.h>
 
@@ -26,6 +27,8 @@ namespace Haleng {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+
+		GraphicContext* m_Context;
 
 		struct WindowData
 		{

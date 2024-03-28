@@ -1,10 +1,8 @@
 #include "halpch.h"
 #include "WindowsWindow.h"
 #include "engine/Application.h"
-
-#include <engine/Log.h>
-#include <glad/glad.h>
-
+#include "platform/opengl/OpenGLContext.h"
+#include "engine/Log.h"
 #include "engine/events/ApplicationEvent.h"
 #include "engine/events/MouseEvent.h"
 #include "engine/events/KeyEvent.h"
@@ -43,17 +41,16 @@ namespace Haleng {
 		if (!s_GLFWInitialized) 
 		{
 			int success = glfwInit();
-			HALENG_CORE_ASSERT(success, "Could not initialize GLFW.");
+			HALENG_ASSERT(success, "Could not initialize GLFW.");
 			glfwSetErrorCallback(GLFWErrorCallback);
 
 			s_GLFWInitialized = true;
 		}
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		HALENG_CORE_ASSERT(status, "Glad Failed to Iniatialize.");
+		
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
@@ -148,8 +145,7 @@ namespace Haleng {
 
 	void WindowsWindow::OnUpdate()
 	{
-		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffer();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
