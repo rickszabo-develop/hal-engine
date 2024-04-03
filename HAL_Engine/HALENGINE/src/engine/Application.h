@@ -8,6 +8,7 @@
 #include "engine/renderer/Shader.h"
 #include "engine/renderer/VertexBuffer.h"
 #include "engine/renderer/IndexBuffer.h"
+#include "renderer/VertexArray.h"
 
 #include "imgui/ImGuiLayer.h"
 
@@ -29,9 +30,6 @@ namespace Haleng {
 
 		inline Window& GetWindow() { return *m_Window; }
 		inline static Application& Get() { return *s_Instance; }
-
-		uint32_t m_VertexArray;
-
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
@@ -40,8 +38,7 @@ namespace Haleng {
 		bool m_Running = true;
 
 		std::unique_ptr<Shader> m_Shader;
-		std::unique_ptr<VertexBuffer> m_VertexBuffer;
-		std::unique_ptr<IndexBuffer> m_IndexBuffer;
+		std::shared_ptr<VertexArray> m_VertexArray;
 
 		LayerStack m_LayerStack;
 

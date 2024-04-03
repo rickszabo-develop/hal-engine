@@ -14,28 +14,6 @@ namespace Haleng {
 
 	Application* Application::s_Instance = nullptr;
 
-	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type) 
-	{
-		switch (type)
-		{
-		case Haleng::ShaderDataType::None:		
-		case Haleng::ShaderDataType::Float:		return GL_FLOAT;
-		case Haleng::ShaderDataType::Float2:	return GL_FLOAT;
-		case Haleng::ShaderDataType::Float3:	return GL_FLOAT;
-		case Haleng::ShaderDataType::Float4:	return GL_FLOAT;
-		case Haleng::ShaderDataType::Mat3:		return GL_FLOAT;
-		case Haleng::ShaderDataType::Mat4:		return GL_FLOAT;
-		case Haleng::ShaderDataType::Int:		return GL_INT;
-		case Haleng::ShaderDataType::Int2:		return GL_INT;
-		case Haleng::ShaderDataType::Int3:		return GL_INT;
-		case Haleng::ShaderDataType::Int4:		return GL_INT;
-		case Haleng::ShaderDataType::Bool:		return GL_BOOL;
-		}
-
-		HALENG_ASSERT(false, "Unknown ShaderDataType!");
-		return 0;
-	}
-
 	Application::Application()
 	{
 		s_Instance = this;
@@ -46,10 +24,8 @@ namespace Haleng {
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 
-
 		// -- first triangle
-		glGenVertexArrays(1, &m_VertexArray);
-		glBindVertexArray(m_VertexArray);
+		m_VertexArray.reset(VertexArray::Create());
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
@@ -57,26 +33,24 @@ namespace Haleng {
 			0.0f, 0.5f, 0.0f,	1.0f, 1.0f, 0.0f, 1.0f
 		};
 
-		m_VertexBuffer.reset(VertexBuffer::Create(vertices, 21 * sizeof(float)));
+		std::shared_ptr<VertexBuffer> vertexBuffer;
+		vertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		BufferLayout layout = {
 			{ ShaderDataType::Float3, "a_Position" },
 			{ ShaderDataType::Float4, "a_Color" }
 		};
 
-		m_VertexBuffer->SetLayout(layout);
-
-		int index = 0;
-		for(const auto& element : m_VertexBuffer->GetLayout().GetElements())
-		{
-			glVertexAttribPointer(index, element.GetComponentCount(), ShaderDataTypeToOpenGLBaseType(element.Type), element.Normalized, layout.GetStride(), (const void*)element.Offset);
-			glEnableVertexAttribArray(index);
-			index++;
-		}
+		vertexBuffer->SetLayout(layout);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		m_IndexBuffer.reset(IndexBuffer::Create(indices, 3));
+
+		std::shared_ptr<IndexBuffer> indexBuffer;
+		indexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices)/sizeof(uint32_t)));
 		
+		m_VertexArray->AddVertexBuffer(vertexBuffer);
+		m_VertexArray->SetIndexBuffer(indexBuffer);
+
 		// -- end first triangle
 
 		// -- start shader 
@@ -154,9 +128,8 @@ namespace Haleng {
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			m_Shader->Bind();
-
-			glBindVertexArray(m_VertexArray);
-			glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
+			m_VertexArray->Bind();
+			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();

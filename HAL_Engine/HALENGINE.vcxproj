@@ -83,6 +83,7 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
+      <AssemblerOutput>NoListing</AssemblerOutput>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -143,6 +144,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="HALENGINE\src\engine\renderer\VertexArray.h" />
     <ClInclude Include="HALENGINE\src\HALENG.H" />
     <ClInclude Include="HALENGINE\src\engine\Application.h" />
     <ClInclude Include="HALENGINE\src\engine\Core.h" />
@@ -168,7 +170,9 @@
     <ClInclude Include="HALENGINE\src\halpch.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLContext.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLIndexBuffer.h" />
+    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLVertexBuffer.h" />
+    <ClInclude Include="HALENGINE\src\platform\opengl\ShaderDataTypeToOpenGLBaseType.h" />
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsInput.h" />
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h" />
   </ItemGroup>
@@ -183,12 +187,14 @@
     <ClCompile Include="HALENGINE\src\engine\renderer\IndexBuffer.cpp" />
     <ClCompile Include="HALENGINE\src\engine\renderer\Renderer.cpp" />
     <ClCompile Include="HALENGINE\src\engine\renderer\Shader.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\renderer\VertexArray.cpp" />
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexBuffer.cpp" />
     <ClCompile Include="HALENGINE\src\halpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLContext.cpp" />
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLIndexBuffer.cpp" />
+    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.cpp" />
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLVertexBuffer.cpp" />
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsInput.cpp" />
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsWindow.cpp" />
