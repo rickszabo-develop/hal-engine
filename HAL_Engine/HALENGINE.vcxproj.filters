@@ -110,6 +110,9 @@
     <ClInclude Include="HALENGINE\src\engine\renderer\VertexArray.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\ShaderDataTypeToOpenGLBaseType.h" />
+    <ClInclude Include="HALENGINE\src\engine\renderer\RendererAPI.h" />
+    <ClInclude Include="HALENGINE\src\engine\renderer\RenderCommand.h" />
+    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
@@ -163,5 +166,8 @@
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexArray.cpp" />
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\renderer\RendererAPI.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\renderer\RenderCommand.cpp" />
+    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.cpp" />
   </ItemGroup>
 </Project>

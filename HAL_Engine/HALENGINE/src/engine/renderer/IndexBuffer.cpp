@@ -14,8 +14,8 @@ namespace Haleng
 	IndexBuffer* IndexBuffer::Create(uint32_t* indices, uint32_t count)
 	{
 		switch (Renderer::GetAPI()) {
-		case RendererAPI::None:		HALENG_ASSERT(false, "RendererAPI None, not supported!"); return nullptr;
-		case RendererAPI::OpenGL:	return new OpenGLIndexBuffer(indices, count);
+		case RendererAPI::API::None:		HALENG_ASSERT(false, "RendererAPI None, not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:	return new OpenGLIndexBuffer(indices, count);
 		}
 
 		HALENG_ASSERT(false, "Unknown renderer API");
