@@ -7,6 +7,12 @@ namespace Haleng {
 	class Shader
 	{
 	public:
+		struct GlobalUniform 
+		{
+			char* id;
+			
+		};
+	public:
 		Shader(const std::string& vertexSrc, const std::string& fragmentSrc);
 		~Shader();
 
