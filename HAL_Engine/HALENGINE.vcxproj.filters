@@ -113,6 +113,8 @@
     <ClInclude Include="HALENGINE\src\engine\renderer\RendererAPI.h" />
     <ClInclude Include="HALENGINE\src\engine\renderer\RenderCommand.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.h" />
+    <ClInclude Include="HALENGINE\src\engine\scene\OrthographicCamera.h" />
+    <ClInclude Include="HALENGINE\src\engine\scene\Transform3D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
@@ -169,5 +171,7 @@
     <ClCompile Include="HALENGINE\src\engine\renderer\RendererAPI.cpp" />
     <ClCompile Include="HALENGINE\src\engine\renderer\RenderCommand.cpp" />
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\scene\OrthographicCamera.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\scene\Transform3D.cpp" />
   </ItemGroup>
 </Project>
