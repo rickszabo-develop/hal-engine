@@ -10,7 +10,7 @@
 #include "engine/renderer/IndexBuffer.h"
 #include "renderer/VertexArray.h"
 #include "imgui/ImGuiLayer.h"
-#include "scene/OrthographicCamera.h"
+#include "scene/Camera.h"
 
 namespace Haleng {
 	class HALENG_API Application
@@ -29,8 +29,6 @@ namespace Haleng {
 		inline Window& GetWindow() { return *m_Window; }
 		inline static Application& Get() { return *s_Instance; }
 	private:
-		//OrthographicCamera m_Camera;
-
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;

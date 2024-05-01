@@ -103,9 +103,6 @@
     <ClInclude Include="HALENGINE\src\engine\renderer\VertexBuffer.h">
       <Filter>engine\renderer</Filter>
     </ClInclude>
-    <ClInclude Include="HALENGINE\src\engine\scene\OrthographicCamera.h">
-      <Filter>engine\scene</Filter>
-    </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\scene\Camera.h">
       <Filter>engine\scene</Filter>
     </ClInclude>
@@ -180,9 +177,6 @@
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexBuffer.cpp">
       <Filter>engine\renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="HALENGINE\src\engine\scene\OrthographicCamera.cpp">
-      <Filter>engine\scene</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\scene\Camera.cpp">
       <Filter>engine\scene</Filter>

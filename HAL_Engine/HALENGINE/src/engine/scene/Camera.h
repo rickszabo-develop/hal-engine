@@ -8,13 +8,13 @@ namespace Haleng
 	class Camera : public Transform3D
 	{
 	public:
-		Camera(float left, float right, float bottom, float top);
+		Camera(float fovy, float aspect, float zNear, float zFar);
 
 		virtual glm::vec3& GetPosition() override { return m_Data.position; }
 		virtual const void SetPosition(const glm::vec3& position) override;
 
-		/*float GetRotation() const { return m_Rotation; }
-		void SetRotation(float rotation) { m_Rotation = rotation; RecalculateViewMatrix(); }*/
+		virtual glm::vec3& GetRotation() { return m_Data.eulerRotation; }
+		virtual const void SetRotation(const glm::vec3& rotation);
 
 		virtual glm::vec3& GetScale() override { return m_Data.scale; }
 		virtual const void SetScale(const glm::vec3& scale) override;

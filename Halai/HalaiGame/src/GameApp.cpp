@@ -42,7 +42,7 @@ std::string fragmentSrc = R"(
 class LayerExample : public Haleng::Layer {
 public:
 	LayerExample()
-		: Layer("Example"), m_Camera(-1.0, 1.0, -1.0, 1.0)
+		: Layer("Example"), m_Camera(glm::radians(45.0f), (800/600), 0.1f, 100.0f)
 	{
 		m_VertexArray.reset(Haleng::VertexArray::Create());
 
@@ -91,7 +91,7 @@ public:
 
 	virtual void OnImGuiRender() override;
 private:
-	Haleng::OrthographicCamera m_Camera;
+	Haleng::Camera m_Camera;
 	std::shared_ptr<Haleng::VertexArray> m_VertexArray;
 	std::shared_ptr<Haleng::Shader> m_Shader;
 };

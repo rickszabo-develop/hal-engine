@@ -9,7 +9,7 @@
 #include "engine/renderer/Renderer.h"
 #include "engine/renderer/Shader.h"
 #include "engine/renderer/BufferLayout.h"
-#include "engine/scene/OrthographicCamera.h"
+#include "engine/scene/Camera.h"
 #include "engine/scene/Transform3D.h"
 
 //Input Codes

@@ -168,7 +168,6 @@
     <ClInclude Include="HALENGINE\src\engine\renderer\Shader.h" />
     <ClInclude Include="HALENGINE\src\engine\renderer\VertexArray.h" />
     <ClInclude Include="HALENGINE\src\engine\renderer\VertexBuffer.h" />
-    <ClInclude Include="HALENGINE\src\engine\scene\OrthographicCamera.h" />
     <ClInclude Include="HALENGINE\src\engine\scene\Camera.h" />
     <ClInclude Include="HALENGINE\src\engine\scene\Transform3D.h" />
     <ClInclude Include="HALENGINE\src\halpch.h" />
@@ -196,7 +195,6 @@
     <ClCompile Include="HALENGINE\src\engine\renderer\Shader.cpp" />
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexArray.cpp" />
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexBuffer.cpp" />
-    <ClCompile Include="HALENGINE\src\engine\scene\OrthographicCamera.cpp" />
     <ClCompile Include="HALENGINE\src\engine\scene\Camera.cpp" />
     <ClCompile Include="HALENGINE\src\halpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
