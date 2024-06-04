@@ -16,6 +16,7 @@ IncludeDir["GLFW"] = "HAL_Engine/vendor/GLFW/include"
 IncludeDir["glad"] = "HAL_Engine/vendor/glad/include"
 IncludeDir["imgui"] = "HAL_Engine/vendor/imgui"
 IncludeDir["glm"] = "HAL_Engine/vendor/glm"
+IncludeDir["stb"] = "HAL_Engine/vendor/stb"
 
 include "HAL_Engine/vendor/GLFW"
 include "HAL_Engine/vendor/glad"
@@ -37,7 +38,9 @@ project "HALENGINE"
 	files
 	{
 		"HAL_Engine/HALENGINE/src/**.h",
-		"HAL_Engine/HALENGINE/src/**.cpp"
+		"HAL_Engine/HALENGINE/src/**.cpp",
+		"HAL_Engine/vendor/stb/**.cpp",
+		"HAL_Engine/vendor/stb/**.h"
 	}
 
 	includedirs
@@ -47,7 +50,8 @@ project "HALENGINE"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.glad}",
 		"%{IncludeDir.imgui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb}"
 	}
 
 	links

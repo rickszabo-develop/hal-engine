@@ -11,6 +11,7 @@
 #include "engine/renderer/BufferLayout.h"
 #include "engine/scene/Camera.h"
 #include "engine/scene/Transform3D.h"
+#include "engine/renderer/Texture.h"
 
 //Input Codes
 #include "engine/Keycodes.h"
