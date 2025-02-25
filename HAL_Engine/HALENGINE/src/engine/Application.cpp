@@ -1,11 +1,15 @@
 #include "halpch.h"
 #include "Application.h"
 
-#include "engine/Log.h"
+#include "engine/log/Log.h"
 #include "engine/Input.h"
 #include "engine/renderer/Shader.h"
 #include "engine/renderer/Renderer.h"
 #include "renderer/BufferLayout.h"
+#include "engine/scene/Camera.h"
+#include "engine/Keycodes.h"
+#include "platform/windows/WindowsInput.h"
+#include <glm/ext/matrix_transform.hpp>
 
 namespace Haleng {
 
@@ -59,6 +63,8 @@ namespace Haleng {
 			layout(location = 0) in vec3 a_Position;
 			layout(location = 1) in vec4 a_Color;
 
+			uniform mat4 u_ViewProjectionMatrix;
+
 			out vec3 v_Position;
 			out vec4 v_Color;
 
@@ -66,7 +72,7 @@ namespace Haleng {
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = vec4(a_Position, 1.0);
+				gl_Position = u_ViewProjectionMatrix * vec4(a_Position, 1.0);
 			}
 		)";
 
@@ -121,13 +127,20 @@ namespace Haleng {
 
 	void Application::Run()
 	{
+		float rotation = 0.0f;
+		Camera camera(60.0f, 1.778f, 0.1f, 100.0f);
+		camera.SetPosition(glm::vec3(0.f, 0.f, -0.2f));
+
 		while (m_Running) 
 		{
 			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 			RenderCommand::Clear();
 			Renderer::BeginScene();
+
 			m_Shader->Bind();
-			Renderer::Submit(m_VertexArray);			
+			m_Shader->SetMat4("u_ViewProjectionMatrix", camera.GetViewProjectionMatrix());
+
+			Renderer::Submit(m_VertexArray);
 			Renderer::EndScene();
 
 			for (Layer* layer : m_LayerStack)
