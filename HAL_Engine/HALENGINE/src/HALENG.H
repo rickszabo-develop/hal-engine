@@ -5,6 +5,12 @@
 #include "engine/layer/Layer.h"
 #include "engine/imgui/ImGuiLayer.h"
 #include "engine/Input.h"
+#include "engine/scene/Camera.h"
+#include "engine/scene/Entity.h"
+#include "engine/scene/Transform.h"
+#include "engine/renderer/RenderCommand.h"
+#include "engine/renderer/Renderer.h"
+
 
 //Input Codes
 #include "engine/Keycodes.h"

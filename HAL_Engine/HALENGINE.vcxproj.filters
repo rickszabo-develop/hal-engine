@@ -137,6 +137,8 @@
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\core\Timestep.h" />
+    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
@@ -209,5 +211,6 @@
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsWindow.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
+    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLShader.cpp" />
   </ItemGroup>
 </Project>
