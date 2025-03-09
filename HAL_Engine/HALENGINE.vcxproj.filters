@@ -16,6 +16,9 @@
     <Filter Include="engine\renderer">
       <UniqueIdentifier>{2166C161-8DF1-2E26-9602-B21A020D8B26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="engine\scene">
+      <UniqueIdentifier>{7829C6B6-648C-555B-0D12-8E11F95321DE}</UniqueIdentifier>
+    </Filter>
     <Filter Include="platform">
       <UniqueIdentifier>{4A63C33C-3630-1E48-5F49-0CF04B7553D6}</UniqueIdentifier>
     </Filter>
@@ -82,14 +85,32 @@
     <ClInclude Include="HALENGINE\src\engine\renderer\IndexBuffer.h">
       <Filter>engine\renderer</Filter>
     </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\renderer\RenderCommand.h">
+      <Filter>engine\renderer</Filter>
+    </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\Renderer.h">
+      <Filter>engine\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\renderer\RendererAPI.h">
       <Filter>engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\Shader.h">
       <Filter>engine\renderer</Filter>
     </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\renderer\VertexArray.h">
+      <Filter>engine\renderer</Filter>
+    </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\VertexBuffer.h">
       <Filter>engine\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\scene\Camera.h">
+      <Filter>engine\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\scene\Entity.h">
+      <Filter>engine\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\scene\Transform.h">
+      <Filter>engine\scene</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\halpch.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLContext.h">
@@ -98,7 +119,16 @@
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLIndexBuffer.h">
       <Filter>platform\opengl</Filter>
     </ClInclude>
+    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.h">
+      <Filter>platform\opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.h">
+      <Filter>platform\opengl</Filter>
+    </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLVertexBuffer.h">
+      <Filter>platform\opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\platform\opengl\ShaderDataTypeToOpenGLBaseType.h">
       <Filter>platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsInput.h">
@@ -107,12 +137,6 @@
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
-    <ClInclude Include="HALENGINE\src\engine\renderer\VertexArray.h" />
-    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.h" />
-    <ClInclude Include="HALENGINE\src\platform\opengl\ShaderDataTypeToOpenGLBaseType.h" />
-    <ClInclude Include="HALENGINE\src\engine\renderer\RendererAPI.h" />
-    <ClInclude Include="HALENGINE\src\engine\renderer\RenderCommand.h" />
-    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
@@ -139,20 +163,41 @@
     <ClCompile Include="HALENGINE\src\engine\renderer\IndexBuffer.cpp">
       <Filter>engine\renderer</Filter>
     </ClCompile>
+    <ClCompile Include="HALENGINE\src\engine\renderer\RenderCommand.cpp">
+      <Filter>engine\renderer</Filter>
+    </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\Renderer.cpp">
+      <Filter>engine\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="HALENGINE\src\engine\renderer\RendererAPI.cpp">
       <Filter>engine\renderer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\Shader.cpp">
       <Filter>engine\renderer</Filter>
     </ClCompile>
+    <ClCompile Include="HALENGINE\src\engine\renderer\VertexArray.cpp">
+      <Filter>engine\renderer</Filter>
+    </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexBuffer.cpp">
       <Filter>engine\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="HALENGINE\src\engine\scene\Camera.cpp">
+      <Filter>engine\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="HALENGINE\src\engine\scene\Entity.cpp">
+      <Filter>engine\scene</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\halpch.cpp" />
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLContext.cpp">
       <Filter>platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLIndexBuffer.cpp">
+      <Filter>platform\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.cpp">
+      <Filter>platform\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.cpp">
       <Filter>platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLVertexBuffer.cpp">
@@ -164,10 +209,5 @@
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsWindow.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
-    <ClCompile Include="HALENGINE\src\engine\renderer\VertexArray.cpp" />
-    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.cpp" />
-    <ClCompile Include="HALENGINE\src\engine\renderer\RendererAPI.cpp" />
-    <ClCompile Include="HALENGINE\src\engine\renderer\RenderCommand.cpp" />
-    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.cpp" />
   </ItemGroup>
 </Project>

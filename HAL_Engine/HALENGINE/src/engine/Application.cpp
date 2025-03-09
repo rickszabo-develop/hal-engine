@@ -1,7 +1,7 @@
 #include "halpch.h"
 #include "Application.h"
 
-#include "engine/log/Log.h"
+#include "engine/Log.h"
 #include "engine/Input.h"
 #include "engine/renderer/Shader.h"
 #include "engine/renderer/Renderer.h"
@@ -9,6 +9,7 @@
 #include "engine/scene/Camera.h"
 #include "engine/Keycodes.h"
 #include "platform/windows/WindowsInput.h"
+#include "engine/scene/Entity.h"
 #include <glm/ext/matrix_transform.hpp>
 
 namespace Haleng {
@@ -26,72 +27,6 @@ namespace Haleng {
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
-
-		// -- first triangle
-		m_VertexArray.reset(VertexArray::Create());
-
-		float vertices[3 * 7] = {
-			-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-			0.5f, -0.5f, 0.0f,	0.0f, 1.0f, 0.0f, 1.0f,
-			0.0f, 0.5f, 0.0f,	1.0f, 1.0f, 0.0f, 1.0f
-		};
-
-		std::shared_ptr<VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
-
-		BufferLayout layout = {
-			{ ShaderDataType::Float3, "a_Position" },
-			{ ShaderDataType::Float4, "a_Color" }
-		};
-
-		vertexBuffer->SetLayout(layout);
-
-		uint32_t indices[3] = { 0, 1, 2 };
-
-		std::shared_ptr<IndexBuffer> indexBuffer;
-		indexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices)/sizeof(uint32_t)));
-		
-		m_VertexArray->AddVertexBuffer(vertexBuffer);
-		m_VertexArray->SetIndexBuffer(indexBuffer);
-
-		// -- end first triangle
-
-		// -- start shader 
-		std::string vertexSrc = R"(
-			#version 330 core
-
-			layout(location = 0) in vec3 a_Position;
-			layout(location = 1) in vec4 a_Color;
-
-			uniform mat4 u_ViewProjectionMatrix;
-
-			out vec3 v_Position;
-			out vec4 v_Color;
-
-			void main()
-			{
-				v_Position = a_Position;
-				v_Color = a_Color;
-				gl_Position = u_ViewProjectionMatrix * vec4(a_Position, 1.0);
-			}
-		)";
-
-		std::string fragmentSrc = R"(
-			#version 330 core
-
-			layout(location = 0) out vec4 color;
-			
-			in vec3 v_Position;
-			in vec4 v_Color;
-
-			void main()
-			{
-				color = v_Color;
-			}
-		)";
-
-		m_Shader.reset(new Shader(vertexSrc, fragmentSrc));
-		// -- end shader
 	}
 
 	Application::~Application()
@@ -127,20 +62,50 @@ namespace Haleng {
 
 	void Application::Run()
 	{
-		float rotation = 0.0f;
 		Camera camera(60.0f, 1.778f, 0.1f, 100.0f);
 		camera.SetPosition(glm::vec3(0.f, 0.f, -0.2f));
+
+		Entity* entity = new Entity();
+		entity->SetPosition(glm::vec3(1.f, 0.f, 0.f));
+
+		Entity* entity1 = new Entity();
+		entity1->SetPosition(glm::vec3(-1.f, 0.f, 0.f));
+
+		Entity* entity2 = new Entity();
+		entity2->SetPosition(glm::vec3(0.f, 0.f, 0.f));
 
 		while (m_Running) 
 		{
 			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 			RenderCommand::Clear();
+
+			if (WindowsInput::IsKeyPressed(HAL_KEY_W)) {
+				camera.SetPosition(camera.GetPosition() + glm::vec3(0.f, 0.f, 0.01f));
+			}
+			else if (WindowsInput::IsKeyPressed(HAL_KEY_S))
+			{
+				camera.SetPosition(camera.GetPosition() + glm::vec3(0.f, 0.f, -0.01f));
+			}
+			else if (WindowsInput::IsKeyPressed(HAL_KEY_A)) {
+				camera.SetPosition(camera.GetPosition() + glm::vec3(-0.04f, 0.f, 0.f));
+			}
+			else if (WindowsInput::IsKeyPressed(HAL_KEY_D)) {
+				camera.SetPosition(camera.GetPosition() + glm::vec3(0.04f, 0.f, 0.f));
+			}
+
+			//draw entity
 			Renderer::BeginScene();
+			entity->GetShader().SetMat4("u_ViewProjectionMatrix", camera.GetViewProjectionMatrix());
+			entity->GetShader().SetMat4("u_Transform", entity->GetTransform());
+			Renderer::Submit(entity->GetVertexArray());
 
-			m_Shader->Bind();
-			m_Shader->SetMat4("u_ViewProjectionMatrix", camera.GetViewProjectionMatrix());
+			//draw entity1
+			entity1->GetShader().SetMat4("u_Transform", entity1->GetTransform());
+			Renderer::Submit(entity1->GetVertexArray());
 
-			Renderer::Submit(m_VertexArray);
+			//draw entity2
+			entity1->GetShader().SetMat4("u_Transform", entity2->GetTransform());
+			Renderer::Submit(entity2->GetVertexArray());
 			Renderer::EndScene();
 
 			for (Layer* layer : m_LayerStack)

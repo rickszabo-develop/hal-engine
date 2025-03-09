@@ -83,7 +83,6 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
-      <AssemblerOutput>NoListing</AssemblerOutput>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -144,9 +143,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="HALENGINE\src\engine\renderer\RenderCommand.h" />
-    <ClInclude Include="HALENGINE\src\engine\renderer\RendererAPI.h" />
-    <ClInclude Include="HALENGINE\src\engine\renderer\VertexArray.h" />
     <ClInclude Include="HALENGINE\src\HALENG.H" />
     <ClInclude Include="HALENGINE\src\engine\Application.h" />
     <ClInclude Include="HALENGINE\src\engine\Core.h" />
@@ -166,9 +162,15 @@
     <ClInclude Include="HALENGINE\src\engine\renderer\BufferLayout.h" />
     <ClInclude Include="HALENGINE\src\engine\renderer\GraphicContext.h" />
     <ClInclude Include="HALENGINE\src\engine\renderer\IndexBuffer.h" />
+    <ClInclude Include="HALENGINE\src\engine\renderer\RenderCommand.h" />
     <ClInclude Include="HALENGINE\src\engine\renderer\Renderer.h" />
+    <ClInclude Include="HALENGINE\src\engine\renderer\RendererAPI.h" />
     <ClInclude Include="HALENGINE\src\engine\renderer\Shader.h" />
+    <ClInclude Include="HALENGINE\src\engine\renderer\VertexArray.h" />
     <ClInclude Include="HALENGINE\src\engine\renderer\VertexBuffer.h" />
+    <ClInclude Include="HALENGINE\src\engine\scene\Camera.h" />
+    <ClInclude Include="HALENGINE\src\engine\scene\Entity.h" />
+    <ClInclude Include="HALENGINE\src\engine\scene\Transform.h" />
     <ClInclude Include="HALENGINE\src\halpch.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLContext.h" />
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLIndexBuffer.h" />
@@ -194,6 +196,8 @@
     <ClCompile Include="HALENGINE\src\engine\renderer\Shader.cpp" />
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexArray.cpp" />
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexBuffer.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\scene\Camera.cpp" />
+    <ClCompile Include="HALENGINE\src\engine\scene\Entity.cpp" />
     <ClCompile Include="HALENGINE\src\halpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

@@ -37,8 +37,8 @@ namespace Haleng {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 
-		std::unique_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
+		//std::unique_ptr<Shader> m_Shader;
+		//std::shared_ptr<VertexArray> m_VertexArray;
 
 		LayerStack m_LayerStack;
 
