@@ -89,7 +89,7 @@ namespace Haleng {
 
 	void Entity::SetShader(const std::string& vertexSrc, const std::string& fragmentSrc)
 	{
-		m_Shader.reset(new Shader(vertexSrc, fragmentSrc));
+		m_Shader.reset(Shader::Create(vertexSrc, fragmentSrc));
 		m_Shader->Bind();
 
 		RecalculateTransform();

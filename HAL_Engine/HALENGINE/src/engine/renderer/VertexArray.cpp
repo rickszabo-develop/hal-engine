@@ -15,7 +15,7 @@ namespace Haleng
 	{
 		switch (Renderer::GetAPI()) 
 		{
-		case RendererAPI::API::None:		HALENG_ASSERT(false, "RendererAPI None, not supported!"); return nullptr;
+			case RendererAPI::API::None:		HALENG_ASSERT(false, "RendererAPI None, not supported!"); return nullptr;
 			case RendererAPI::API::OpenGL:	return new OpenGLVertexArray();
 		}
 

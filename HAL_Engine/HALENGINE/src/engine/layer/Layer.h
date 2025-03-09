@@ -2,6 +2,7 @@
 
 #include "engine/Core.h"
 #include "engine/events/Event.h"
+#include "engine/core/Timestep.h"
 
 namespace Haleng {
 
@@ -14,7 +15,7 @@ namespace Haleng {
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
 		virtual void OnEvent(Event& e) {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep deltaTime) {}
 		virtual void OnImGuiRender() {}
 
 		inline const std::string& GetName() const { return m_DebugName; }

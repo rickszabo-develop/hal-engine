@@ -36,9 +36,7 @@ namespace Haleng {
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
-
-		//std::unique_ptr<Shader> m_Shader;
-		//std::shared_ptr<VertexArray> m_VertexArray;
+		float m_TimeLastFrame = 0.0f;
 
 		LayerStack m_LayerStack;
 
