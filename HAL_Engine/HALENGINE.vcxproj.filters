@@ -1,216 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="engine">
-      <UniqueIdentifier>{FBDB78FB-E77D-A3D1-D038-B725BC792A22}</UniqueIdentifier>
+    <Filter Include="HALENGINE">
+      <UniqueIdentifier>{D003BD32-3C6E-71A9-85AC-224FF1554FFE}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\events">
-      <UniqueIdentifier>{9FF33A70-0BB4-B6A6-D4EE-FF23406EFB82}</UniqueIdentifier>
+    <Filter Include="HALENGINE\src">
+      <UniqueIdentifier>{E729568E-53EA-D1C4-1C25-1B4288A416A1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\imgui">
-      <UniqueIdentifier>{A5B916B6-911C-A65A-3AA2-DE1026E471DD}</UniqueIdentifier>
+    <Filter Include="HALENGINE\src\engine">
+      <UniqueIdentifier>{AC1EA021-98AD-29EB-41CC-3DE62D3A3A91}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\layer">
-      <UniqueIdentifier>{27B946B6-131C-D65A-BCA1-0E11A8E3A1DD}</UniqueIdentifier>
+    <Filter Include="HALENGINE\src\engine\core">
+      <UniqueIdentifier>{A4DA24B5-109D-583F-594D-E7CBC54E311D}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\renderer">
-      <UniqueIdentifier>{2166C161-8DF1-2E26-9602-B21A020D8B26}</UniqueIdentifier>
+    <Filter Include="HALENGINE\src\engine\events">
+      <UniqueIdentifier>{3025E896-9C32-167D-2519-12689125E233}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\scene">
-      <UniqueIdentifier>{7829C6B6-648C-555B-0D12-8E11F95321DE}</UniqueIdentifier>
+    <Filter Include="HALENGINE\src\engine\imgui">
+      <UniqueIdentifier>{167D2B5A-028D-D72A-6B46-3C495775C6C3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="platform">
-      <UniqueIdentifier>{4A63C33C-3630-1E48-5F49-0CF04B7553D6}</UniqueIdentifier>
+    <Filter Include="HALENGINE\src\engine\layer">
+      <UniqueIdentifier>{987C5B5A-848C-072B-ED45-6C49D974F6C3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="platform\opengl">
-      <UniqueIdentifier>{9E4DBFD0-0AD9-2C95-13EA-AF897FF48895}</UniqueIdentifier>
+    <Filter Include="HALENGINE\src\engine\renderer">
+      <UniqueIdentifier>{F23F81E8-5E58-6812-2705-F8AB93DCFCAB}</UniqueIdentifier>
     </Filter>
-    <Filter Include="platform\windows">
-      <UniqueIdentifier>{A44FC440-9048-E392-B97A-C817A5D2C29E}</UniqueIdentifier>
+    <Filter Include="HALENGINE\src\engine\scene">
+      <UniqueIdentifier>{E9ECDA5A-D5FC-862B-3EB6-EB492AE575C4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HALENGINE\src\platform">
+      <UniqueIdentifier>{3B16C689-2710-EFDB-107D-85ECFC155548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HALENGINE\src\platform\opengl">
+      <UniqueIdentifier>{6F277F57-DB3F-6681-A4EC-F51A10C4FA1A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HALENGINE\src\platform\windows">
+      <UniqueIdentifier>{95637F9F-8189-4906-6ACF-CED156946ED2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HALENGINE\src\HALENG.H" />
+    <ClInclude Include="HALENGINE\src\HALENG.H">
+      <Filter>HALENGINE\src</Filter>
+    </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\Application.h">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\Core.h">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\EntryPoint.h">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\Input.h">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\Keycodes.h">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\Log.h">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\MouseButtonCodes.h">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\Window.h">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\core\Timestep.h">
+      <Filter>HALENGINE\src\engine\core</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\events\ApplicationEvent.h">
-      <Filter>engine\events</Filter>
+      <Filter>HALENGINE\src\engine\events</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\events\Event.h">
-      <Filter>engine\events</Filter>
+      <Filter>HALENGINE\src\engine\events</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\events\KeyEvent.h">
-      <Filter>engine\events</Filter>
+      <Filter>HALENGINE\src\engine\events</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\events\MouseEvent.h">
-      <Filter>engine\events</Filter>
+      <Filter>HALENGINE\src\engine\events</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\imgui\ImGuiLayer.h">
-      <Filter>engine\imgui</Filter>
+      <Filter>HALENGINE\src\engine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\layer\Layer.h">
-      <Filter>engine\layer</Filter>
+      <Filter>HALENGINE\src\engine\layer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\layer\LayerStack.h">
-      <Filter>engine\layer</Filter>
+      <Filter>HALENGINE\src\engine\layer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\BufferLayout.h">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\GraphicContext.h">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\IndexBuffer.h">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\RenderCommand.h">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\Renderer.h">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\RendererAPI.h">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\Shader.h">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\VertexArray.h">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\renderer\VertexBuffer.h">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\scene\Camera.h">
-      <Filter>engine\scene</Filter>
+      <Filter>HALENGINE\src\engine\scene</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\scene\Entity.h">
-      <Filter>engine\scene</Filter>
+      <Filter>HALENGINE\src\engine\scene</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\engine\scene\Transform.h">
-      <Filter>engine\scene</Filter>
+      <Filter>HALENGINE\src\engine\scene</Filter>
     </ClInclude>
-    <ClInclude Include="HALENGINE\src\halpch.h" />
+    <ClInclude Include="HALENGINE\src\halpch.h">
+      <Filter>HALENGINE\src</Filter>
+    </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLContext.h">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLIndexBuffer.h">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.h">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLShader.h">
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.h">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLVertexBuffer.h">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\opengl\ShaderDataTypeToOpenGLBaseType.h">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsInput.h">
-      <Filter>platform\windows</Filter>
+      <Filter>HALENGINE\src\platform\windows</Filter>
     </ClInclude>
     <ClInclude Include="HALENGINE\src\platform\windows\WindowsWindow.h">
-      <Filter>platform\windows</Filter>
+      <Filter>HALENGINE\src\platform\windows</Filter>
     </ClInclude>
-    <ClInclude Include="HALENGINE\src\engine\core\Timestep.h" />
-    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLShader.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="HALENGINE\src\engine\renderer\Texture.h" />
+    <ClInclude Include="HALENGINE\src\platform\opengl\OpenGLTexture2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HALENGINE\src\engine\Application.cpp">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\Log.cpp">
-      <Filter>engine</Filter>
+      <Filter>HALENGINE\src\engine</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\imgui\ImGuiBuild.cpp">
-      <Filter>engine\imgui</Filter>
+      <Filter>HALENGINE\src\engine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\imgui\ImGuiLayer.cpp">
-      <Filter>engine\imgui</Filter>
+      <Filter>HALENGINE\src\engine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\layer\Layer.cpp">
-      <Filter>engine\layer</Filter>
+      <Filter>HALENGINE\src\engine\layer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\layer\LayerStack.cpp">
-      <Filter>engine\layer</Filter>
+      <Filter>HALENGINE\src\engine\layer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\BufferLayout.cpp">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\IndexBuffer.cpp">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\RenderCommand.cpp">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\Renderer.cpp">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\RendererAPI.cpp">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\Shader.cpp">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexArray.cpp">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\renderer\VertexBuffer.cpp">
-      <Filter>engine\renderer</Filter>
+      <Filter>HALENGINE\src\engine\renderer</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\scene\Camera.cpp">
-      <Filter>engine\scene</Filter>
+      <Filter>HALENGINE\src\engine\scene</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\engine\scene\Entity.cpp">
-      <Filter>engine\scene</Filter>
+      <Filter>HALENGINE\src\engine\scene</Filter>
     </ClCompile>
-    <ClCompile Include="HALENGINE\src\halpch.cpp" />
+    <ClCompile Include="HALENGINE\src\halpch.cpp">
+      <Filter>HALENGINE\src</Filter>
+    </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLContext.cpp">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLIndexBuffer.cpp">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLRendererAPI.cpp">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLShader.cpp">
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLVertexArray.cpp">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLVertexBuffer.cpp">
-      <Filter>platform\opengl</Filter>
+      <Filter>HALENGINE\src\platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsInput.cpp">
-      <Filter>platform\windows</Filter>
+      <Filter>HALENGINE\src\platform\windows</Filter>
     </ClCompile>
     <ClCompile Include="HALENGINE\src\platform\windows\WindowsWindow.cpp">
-      <Filter>platform\windows</Filter>
+      <Filter>HALENGINE\src\platform\windows</Filter>
     </ClCompile>
-    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLShader.cpp" />
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="HALENGINE\src\engine\renderer\Texture.cpp" />
+    <ClCompile Include="HALENGINE\src\platform\opengl\OpenGLTexture2D.cpp" />
   </ItemGroup>
 </Project>

@@ -34,5 +34,9 @@ namespace Haleng {
 		Transform::Data m_Data;
 		std::unique_ptr<Shader> m_Shader;
 		std::shared_ptr<VertexArray> m_VertexArray;
+	private: //test stb image
+		uint32_t m_TextureID = 0;
+		int m_Width;
+		int m_Height;
 	};
 }

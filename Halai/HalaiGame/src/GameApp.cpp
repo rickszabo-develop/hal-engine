@@ -19,7 +19,8 @@ public:
 		: Layer("Example") , m_Camera(60.0f, 1.778f, 0.1f, 100.0f)
 	{
 		m_Camera.SetPosition(glm::vec3(0.f, 0.f, -0.2f));
-		m_Entity->SetPosition(glm::vec3(1.f, 0.f, 0.f));
+		m_Entity->SetPosition(glm::vec3(0.f, 0.f, 0.f));
+		m_Entity->SetScale(glm::vec3(4.f, 2.f, 1.f));
 	}
 	~LayerExample() {}
 
