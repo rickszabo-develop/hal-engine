@@ -23,7 +23,7 @@ namespace Haleng {
 
 		glm::mat4x4& GetTransform() { return m_Data.globalTransform; }
 
-		inline Shader& GetShader() { return *m_Shader; }
+		inline std::shared_ptr<Shader>& GetShader() { return m_Shader; }
 		void SetShader(const std::string& vertexSrc, const std::string& fragmentSrc);
 
 		std::shared_ptr<VertexArray> GetVertexArray() { return m_VertexArray; }
@@ -32,7 +32,7 @@ namespace Haleng {
 		void RecalculateTransform();
 	private:
 		Transform::Data m_Data;
-		std::unique_ptr<Shader> m_Shader;
+		std::shared_ptr<Shader> m_Shader;
 		std::shared_ptr<VertexArray> m_VertexArray;
 	private: //test stb image
 		uint32_t m_TextureID = 0;

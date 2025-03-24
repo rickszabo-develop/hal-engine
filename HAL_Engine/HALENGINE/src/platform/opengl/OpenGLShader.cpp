@@ -3,10 +3,78 @@
 #include "OpenGLShader.h"
 #include <glad/glad.h>
 #include <glm/gtc/type_ptr.hpp>
+#include <fstream>
 
 namespace Haleng
 {
-	OpenGLShader::OpenGLShader(const std::string& vertexSrc, const std::string& fragmentSrc) 
+	OpenGLShader::OpenGLShader(const std::string& vertexPath, const std::string& fragmentPath) 
+	{
+		
+		std::string vertexScr;
+		std::string fragmentSrc;
+		std::ifstream vShaderFile;
+		std::ifstream fShaderFile;
+		
+		vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+		fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+
+		try
+		{
+			vShaderFile.open(vertexPath);
+			fShaderFile.open(fragmentPath);
+			std::stringstream vShaderStream, fShaderStream;
+
+			vShaderStream << vShaderFile.rdbuf();
+			fShaderStream << fShaderFile.rdbuf();
+
+			vShaderFile.close();
+			fShaderFile.close();
+
+			vertexScr = vShaderStream.str();
+			fragmentSrc = fShaderStream.str();
+		}
+		catch (std::ifstream::failure e)
+		{
+			HALENG_CORE_ERROR("ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ");
+		}
+
+		Compile(vertexScr, fragmentSrc);
+	}
+
+	OpenGLShader::~OpenGLShader()
+	{
+		glDeleteProgram(m_RendererID);
+	}
+
+	void OpenGLShader::Bind()
+	{
+		glUseProgram(m_RendererID);
+	}
+
+	void OpenGLShader::Unbind()
+	{
+		glUseProgram(0);
+	}
+
+	void OpenGLShader::SetUniform1i(const std::string& name, int value)
+	{
+		auto location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniform1i(location, value);
+	}
+
+	void OpenGLShader::SetUniform1f(const std::string& name, float value)
+	{
+		auto location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniform1f(location, value);
+	}
+
+	void OpenGLShader::SetUniformMat4f(const std::string& name, const glm::mat4& matrix)
+	{
+		auto location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
+	}
+
+	void OpenGLShader::Compile(const std::string& vertexSrc, const std::string& fragmentSrc)
 	{
 		// Create an empty vertex shader handle
 		GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -114,38 +182,5 @@ namespace Haleng
 		// Always detach shaders after a successful link.
 		glDetachShader(program, vertexShader);
 		glDetachShader(program, fragmentShader);
-	}
-
-	OpenGLShader::~OpenGLShader()
-	{
-		glDeleteProgram(m_RendererID);
-	}
-
-	void OpenGLShader::Bind()
-	{
-		glUseProgram(m_RendererID);
-	}
-
-	void OpenGLShader::Unbind()
-	{
-		glUseProgram(0);
-	}
-
-	void OpenGLShader::SetUniform1i(const std::string& name, int value)
-	{
-		auto location = glGetUniformLocation(m_RendererID, name.c_str());
-		glUniform1i(location, value);
-	}
-
-	void OpenGLShader::SetUniform1f(const std::string& name, float value)
-	{
-		auto location = glGetUniformLocation(m_RendererID, name.c_str());
-		glUniform1f(location, value);
-	}
-
-	void OpenGLShader::SetUniformMat4f(const std::string& name, const glm::mat4& matrix)
-	{
-		auto location = glGetUniformLocation(m_RendererID, name.c_str());
-		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
 	}
 }

@@ -40,14 +40,11 @@ public:
 		
 		else if (Haleng::Input::IsKeyPressed(HAL_KEY_D)) 
 			m_Camera.SetPosition(m_Camera.GetPosition() + glm::vec3(0.04f, 0.f, 0.f));
-
+		
+		Haleng::Renderer::Init();
 		//draw entity
-		Haleng::Renderer::BeginScene();
-
-		m_Entity->GetShader().SetUniformMat4f("u_ViewProjectionMatrix", m_Camera.GetViewProjectionMatrix());
-		m_Entity->GetShader().SetUniformMat4f("u_Transform", m_Entity->GetTransform());
-		Haleng::Renderer::Submit(m_Entity->GetVertexArray());
-
+		Haleng::Renderer::BeginScene(m_Camera);
+		Haleng::Renderer::Submit(m_Entity->GetShader(), m_Entity->GetVertexArray(), m_Entity->GetTransform());
 		Haleng::Renderer::EndScene();
 	}
 private:
